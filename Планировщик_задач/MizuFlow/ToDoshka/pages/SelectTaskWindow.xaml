@@ -1,0 +1,10 @@
+﻿<Window x:Class="MizuFlow.SelectTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Select Task" Height="300" Width="400">
+    <Grid>
+        <ListBox x:Name="listBoxTasks" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionMode="Single">
+             </ListBox>
+        <Button Content="Select Task" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Click="Btn_SelectTask_Click"/>
+    </Grid>
+</Window>

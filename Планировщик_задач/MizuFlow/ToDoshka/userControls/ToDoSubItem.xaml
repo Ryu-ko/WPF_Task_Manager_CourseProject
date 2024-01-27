@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="MizuFlow.ToDoSubItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:MizuFlow"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="550">
+
+    <Grid>
+        <Border CornerRadius="7" Background="#FFD8E1E6">
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.1*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <DockPanel Grid.Column="0">
+                    <ToggleButton x:Name="btn_SubtaskSolved" 
+                                  Width="40" Height="40" 
+                                  Background="#FF4E9D54"
+                                  Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                  Click="Btn_SubtaskSolved_Click" BorderBrush="#FF5DAF63" RenderTransformOrigin="0.55,0.57" Margin="5,0,0,0" />
+                    <TextBox x:Name="txt_Subtask" 
+                             MaxLength="30"
+                             IsReadOnly="True"
+                             Width="280" 
+                             Style="{DynamicResource tb_ToDoItem}" 
+                             VerticalAlignment="Center" Background="#FFD8E1E6"/>
+                </DockPanel>
+
+               
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 5 0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    
+                    <Button x:Name="btn_EditSubtask" 
+                            ToolTip="{DynamicResource _EditTask}" 
+                            Click="Btn_EditSubtask_Click" 
+                            Padding="0" Width="30"
+                            Height="30" Margin="-2 0 3 0" Background="#FF4E9EC5" BorderBrush="#FF247376">
+                        <materialDesign:PackIcon x:Name="md_EditSubtask" 
+                                                 Kind="Edit"
+                                                 Foreground="White" 
+                                                 Width="25" Height="25"/>
+                    </Button>
+                    
+                    <Button x:Name="btn_AddPhoto"
+                            ToolTip="{DynamicResource _AddImg}" 
+                            Click="Btn_AddPhoto_Click" 
+                            Padding="0" Width="30" 
+                            Height="30" Margin="0 0 3 0" Background="#FF4E9EC5" BorderBrush="#FF247376">
+                        <materialDesign:PackIcon x:Name="md_AddPhoto" 
+                                                 Kind="InsertPhoto"
+                                                 Foreground="White" 
+                                                 Width="25" Height="25"/>
+                    </Button>
+                    
+                    <Button x:Name="btn_AddFile"
+                            ToolTip="{DynamicResource _AddFile}"
+                            Click="Btn_AddFile_Click" 
+                            Padding="0" Width="30" 
+                            Height="30" Margin="0 0 3 0" Background="#FF4E9EC5" BorderBrush="#FF247376">
+                        <materialDesign:PackIcon x:Name="md_AddFile"
+                                                 Kind="FileDocument"
+                                                 Foreground="White"
+                                                 Width="25" Height="25"/>
+                    </Button>
+                    
+                    <Button ToolTip="{DynamicResource _Delete}"
+                            Click="Btn_Delete_Click" 
+                            Padding="0" 
+                            Width="30"
+                            Height="30" Background="#FF4E9EC5" BorderBrush="#FF247376">
+                        <materialDesign:PackIcon Kind="Delete"
+                                                 Foreground="White" 
+                                                 Width="25" 
+                                                 Height="25"/>
+                    </Button>
+                    
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,195 @@
+﻿<Window x:Class="MizuFlow.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:MizuFlow"
+        mc:Ignorable="d"
+        Title="MizuFlow" Height="525" Width="682" 
+        Icon="/resources/icon/book.ico"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"  
+        Background="#FF28708C"
+        >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="22*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="resources/wallpapers/Tori.jpeg"/>
+            </StackPanel.Background>
+
+        </StackPanel>
+
+
+        <!-- SING IN -->
+        <TabControl x:Name="tabControl" Grid.Column="0" BorderBrush="#FF2F7995" Foreground="#FF2F7995" Width="330" >
+            <TabControl.Background>
+                <SolidColorBrush Color="#FF0A5C7C"/>
+            </TabControl.Background>
+
+            <TabItem Header="Sign in" Width="156" FontSize="18" 
+                     Foreground="Black"
+                     Grid.Column="0" 
+                     Background="#FFA4D7EB" >
+
+                <TabItem.Content>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Height="295" Margin="0,0,4,0">
+
+
+                        <Border Width="300" Height="60" Margin="0 40 0 0" >
+                            <DockPanel>
+                                <materialDesign:PackIcon x:Name="md_Login" Kind="Person" Foreground="White"
+                                                         Padding="0" Width="25" Height="50"
+                                                         Margin="0 6 0 0"/>
+                                <TextBox x:Name="Login"
+                                         materialDesign:HintAssist.Hint="Login"
+                                         MaxLength="15" 
+                                         FontSize="18"
+                                         Foreground="White"
+                                         Padding="5 0"
+                                         VerticalContentAlignment="Center"
+                                         PreviewMouseDown="TextBox_PreviewMouseDown"
+                                        />
+                            </DockPanel>
+                        </Border>
+
+                        <Border Width="300" Height="60" Margin="0 30 0 45">
+                            <DockPanel>
+                                <materialDesign:PackIcon x:Name="md_Password" Kind="Key" Foreground="White"
+                                                         Width="25" Height="50" Padding="0" Margin="0 6 0 0" />
+
+                                <PasswordBox x:Name="Password"
+                                             materialDesign:HintAssist.Hint="Password" 
+                                             MaxLength="15"
+                                             Padding="5 0" 
+                                             FontSize="18"
+                                             VerticalContentAlignment="Center"
+                                             PreviewMouseDown="Password_PreviewMouseDown" 
+                                             Foreground="White" />
+                            </DockPanel>
+                        </Border>
+
+                        <Button x:Name="LogIn"
+                                Content="Login" 
+                                Height="30" 
+                                Width="165"
+                                FontSize="16"
+                                Foreground="Black"
+                                Background="#b43c2c"
+                                Click="LogIn_Click" />
+                    </StackPanel>
+
+                </TabItem.Content>
+
+            </TabItem>
+
+            <!-- NEW ACCOUNT -->
+            <TabItem Header="New account" Width="170"  FontSize="18" 
+                     Foreground="Black"
+                     Grid.Column="0" 
+                     Background="#FFA4D7EB" >
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Height="449" Margin="0,0,4,0">
+                    <StackPanel.Background>
+                        <ImageBrush/>
+                    </StackPanel.Background>
+
+                    <DockPanel Margin="0 10 0 0"  >
+                        <materialDesign:PackIcon Kind="Person" Foreground="White"
+                                                         Padding="0" Width="25" Height="50" />
+                        <TextBox x:Name="txt_Login"
+                                 materialDesign:HintAssist.Hint="Login" 
+                                 MaxLength="15" 
+                                 FontSize="18"
+                                 Foreground="White"
+                                 Padding="5 0"
+                                 VerticalContentAlignment="Center"
+                                 PreviewMouseDown="TextBox_PreviewMouseDown"/>
+                    </DockPanel>
+
+
+                    <DockPanel Margin="0 10 0 0" >
+                        <materialDesign:PackIcon Kind="PersonOutline" Foreground="White"
+                                                         Padding="0" Width="25" Height="50"/>
+                        <TextBox x:Name="txt_Name"
+                                 materialDesign:HintAssist.Hint="Name" 
+                                 MaxLength="15" 
+                                 FontSize="18"
+                                 Foreground="White"
+                                 Padding="5 0"
+                                 VerticalContentAlignment="Center"
+                                 PreviewMouseDown="TextBox_PreviewMouseDown"/>
+                    </DockPanel>
+
+                    <DockPanel Margin="0 10 0 0" >
+                        <materialDesign:PackIcon Kind="PersonOutline" Foreground="White"
+                                                         Padding="0" Width="25" Height="50"/>
+                        <TextBox x:Name="txt_Surname" 
+                                 materialDesign:HintAssist.Hint="Surname"
+                                 MaxLength="15" 
+                                 FontSize="18"
+                                 Foreground="White"
+                                 Padding="5 0"
+                                 VerticalContentAlignment="Center"                                 
+                                 PreviewMouseDown="TextBox_PreviewMouseDown"/>
+                    </DockPanel>
+
+                    <DockPanel Margin="0 10 0 0" >
+                        <materialDesign:PackIcon Kind="Email" Foreground="White"
+                                                         Padding="0" Width="25" Height="50"/>
+                        <TextBox x:Name="txt_Email"
+                                 materialDesign:HintAssist.Hint="E-mail" 
+                                 MaxLength="15" 
+                                 FontSize="18"
+                                 Foreground="White"
+                                 Padding="5 0"
+                                 VerticalContentAlignment="Center"                                
+                                 PreviewMouseDown="TextBox_PreviewMouseDown"/>
+                    </DockPanel>
+
+                    <DockPanel Margin="0 10 0 0" >
+                        <materialDesign:PackIcon Kind="Key"  Foreground="White"
+                                                         Padding="0" Width="25" Height="50"/>
+                        <PasswordBox x:Name="PasswordBoxdReg1" 
+                                     materialDesign:HintAssist.Hint="Password"
+                                     MaxLength="15" 
+                                     FontSize="18"
+                                     Foreground="White"
+                                     Padding="5 0"
+                                     VerticalContentAlignment="Center"
+                                     PreviewMouseDown="Password_PreviewMouseDown"/>
+                    </DockPanel>
+
+                    <DockPanel Margin="0 10 0 25">
+                        <materialDesign:PackIcon Kind="PasswordReset" Foreground="White"
+                                                         Padding="0" Width="25" Height="50"/>
+                        <PasswordBox x:Name="PasswordBoxdReg2"
+                                     materialDesign:HintAssist.Hint="Repeat password"
+                                     MaxLength="15" 
+                                     FontSize="18"
+                                     Foreground="White"
+                                     Padding="5 0"
+                                     VerticalContentAlignment="Center"
+                                     PreviewMouseDown="Password_PreviewMouseDown"/>
+                    </DockPanel>
+
+                    <Button Content="Register" x:Name="Register" 
+                                      Height="30" 
+                                      Width="165"
+                                      FontSize="16"
+                                      Foreground="Black"
+                                      Background="#b43c2c"
+                                      Click="Register_Click" />
+
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
